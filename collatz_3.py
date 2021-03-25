@@ -1,20 +1,20 @@
-def collatz(number):
+def collatz (number):
+    counter = 0
     if number > 1:
-        steps = 0
-        while number != 1:
+        while number > 1:
             if number % 2 == 0:
-                print (int(number//2))
-                number = number/2
-                steps += 1
+                number = number // 2 
+                print (number)
+                counter += 1
             else:
-                print (int(number*3+1))
                 number = number * 3 + 1
-                steps += 1
-        print('collatz finished in ' + str(steps) + ' steps')
-    else:
-        print ('I quit')
+                print (number)
+                counter += 1
+        print ('collatz completed in: ' + str(counter) + ' steps')
+    else: print(error)
 
+print ('Hello. Enter a number over 1. I will run the collatz sequence on it.')
 try:
-    collatz(int(input('choose any integer greater than 1: ')))
+    collatz(int(input('Number: ')))
 except ValueError:
-    print('non-int, try again')
+    print ("NAN. bye")
